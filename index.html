@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fares Ahmed Loutfy — Data Engineer</title>
+<meta name="description" content="Fares Ahmed Loutfy, Data Engineer. Pipelines, warehouses and ML feature engineering for high-growth startups.">
+<meta name="theme-color" content="#0B0E13">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Fares Ahmed Loutfy — Data Engineer">
+<meta property="og:description" content="Pipelines, warehouses and ML feature engineering for high-growth startups.">
+<meta property="og:locale" content="en_US">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Fares Ahmed Loutfy",
+  "jobTitle":"Data Engineer",
+  "email":"mailto:faressallem8@gmail.com",
+  "telephone":"+201550272915",
+  "address":{"@type":"PostalAddress","addressLocality":"Alexandria","addressCountry":"EG"},
+  "alumniOf":{"@type":"CollegeOrUniversity","name":"Alexandria University"},
+  "sameAs":[
+    "https://github.com/faressallem8",
+    "https://www.linkedin.com/in/fares-ahmed-72466532a/"
+  ],
+  "knowsAbout":["Python","SQL","Data Engineering","Snowflake","AWS","ETL","Feature Engineering"]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0B0E13;
+    --bg-raised:#111621;
+    --bg-elevated:#151B28;
+    --line:#232A37;
+    --line-soft:#1A202B;
+    --text:#EAEDF1;
+    --text-dim:#8D96A3;
+    --text-mid:#C9CFD8;
+    --accent:#E3A64F;
+    --accent-bright:#F0B563;
+    --accent-dim:#B9803A;
+    --accent-glow:rgba(227,166,79,0.18);
+    --maxw:1120px;
+    --ease:cubic-bezier(.2,.7,.3,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  ::selection{background:var(--accent);color:#0B0E13;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  h1,h2,h3{
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    color:var(--accent);
+  }
+
+  /* ---------- SKIP LINK ---------- */
+  .skip-link{
+    position:absolute;
+    left:16px;
+    top:-60px;
+    z-index:200;
+    background:var(--accent);
+    color:#0B0E13;
+    padding:10px 18px;
+    border-radius:3px;
+    font-weight:600;
+    font-size:14px;
+    text-decoration:none;
+    transition:top .2s;
+  }
+  .skip-link:focus{top:16px;}
+
+  /* ---------- SCROLL PROGRESS ---------- */
+  .scroll-progress{
+    position:fixed;
+    top:0;left:0;
+    height:2px;
+    width:0%;
+    background:linear-gradient(90deg, var(--accent-dim), var(--accent), var(--accent-bright));
+    z-index:120;
+    transition:width .08s linear;
+    box-shadow:0 0 10px var(--accent-glow);
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(11,14,19,0.82);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:16px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-size:14.5px;
+    color:var(--text-dim);
+  }
+  .nav-links a{
+    text-decoration:none;
+    transition:color .15s;
+    position:relative;
+    padding:4px 0;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:0;
+    height:1px;
+    background:var(--accent);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s var(--ease);
+  }
+  .nav-links a:hover{color:var(--text);}
+  .nav-links a:hover::after,
+  .nav-links a.active::after{transform:scaleX(1);}
+  .nav-links a.active{color:var(--accent);}
+
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .nav-cta{
+    font-size:14px;
+    font-weight:600;
+    color:#0B0E13;
+    background:var(--accent);
+    padding:9px 18px;
+    border-radius:3px;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:background .15s, transform .15s;
+  }
+  .nav-cta:hover{background:var(--accent-bright);transform:translateY(-1px);}
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    width:40px;height:40px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    padding:0;
+    border-radius:3px;
+  }
+  .nav-toggle span{
+    display:block;
+    height:2px;width:20px;
+    background:var(--text);
+    border-radius:1px;
+    transition:transform .25s var(--ease), opacity .2s;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-menu{
+    position:absolute;
+    top:100%;left:0;right:0;
+    background:var(--bg-raised);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+    max-height:0;
+    transition:max-height .35s var(--ease);
+  }
+  .mobile-menu.open{max-height:420px;}
+  .mobile-menu ul{
+    list-style:none;
+    margin:0;
+    padding:8px 32px 8px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .mobile-menu a{
+    display:block;
+    padding:12px 4px;
+    text-decoration:none;
+    color:var(--text-mid);
+    font-size:15px;
+    border-bottom:1px solid var(--line-soft);
+    transition:color .15s, padding-left .2s;
+  }
+  .mobile-menu li:last-child a{border-bottom:none;}
+  .mobile-menu a:hover{color:var(--accent);padding-left:8px;}
+
+  /* ---------- SOCIAL / ICON LINKS ---------- */
+  .icon-link{
+    width:38px;height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid var(--line);
+    border-radius:3px;
+    color:var(--text-dim);
+    text-decoration:none;
+    background:transparent;
+    transition:color .2s, border-color .2s, background .2s, transform .2s var(--ease);
+  }
+  .icon-link:hover{
+    color:var(--accent);
+    border-color:var(--accent);
+    background:rgba(227,166,79,0.06);
+    transform:translateY(-2px);
+  }
+  .icon-link svg{width:17px;height:17px;display:block;}
+
+  .hero-social{
+    margin-top:28px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .hero-social .hs-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    margin-right:2px;
+  }
+
+  .mobile-menu .mobile-social{
+    display:flex;
+    gap:12px;
+    padding:12px 32px 24px;
+  }
+
+  @media (max-width:820px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+    .nav-inner{padding:14px 24px;}
+    .mobile-menu ul{padding:8px 24px 4px;}
+    .mobile-menu .mobile-social{padding:12px 24px 22px;}
+  }
+  @media (max-width:620px){
+    .nav-right .nav-social{display:none;}
+  }
+  @media (max-width:420px){
+    .nav-cta{padding:8px 12px;font-size:12.5px;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:104px 0 48px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:72px 72px;
+    -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
+    mask-image:radial-gradient(ellipse 90% 70% at 50% 0%, #000 0%, transparent 75%);
+    opacity:.55;
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    top:-40%;right:-15%;
+    width:65%;height:130%;
+    background:radial-gradient(circle, var(--accent-glow) 0%, transparent 62%);
+    pointer-events:none;
+    filter:blur(20px);
+  }
+  .hero-grid{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1.25fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .dot-live{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 4px var(--accent-glow);
+    animation:pulseDot 2.4s ease-in-out infinite;
+  }
+  @keyframes pulseDot{
+    0%,100%{box-shadow:0 0 0 4px var(--accent-glow);}
+    50%{box-shadow:0 0 0 8px rgba(227,166,79,0.06);}
+  }
+  .hero h1{
+    font-size:clamp(40px,6vw,68px);
+    line-height:0.98;
+    text-transform:uppercase;
+    background: linear-gradient(100deg, var(--text) 0%, var(--text-dim) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero .role{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    color:var(--accent);
+    font-size:clamp(18px,2.4vw,24px);
+    margin-top:10px;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  .hero p.tagline{
+    margin-top:22px;
+    max-width:52ch;
+    font-size:17px;
+    color:var(--text-dim);
+  }
+  .hero-actions{
+    margin-top:32px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#0B0E13;
+    font-weight:600;
+    font-size:14.5px;
+    padding:13px 24px;
+    border-radius:3px;
+    text-decoration:none;
+    border:1px solid var(--accent);
+    transition:background .15s, transform .15s, box-shadow .15s;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .btn-primary:hover{
+    background:var(--accent-bright);
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px -8px var(--accent-glow);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--text);
+    font-weight:600;
+    font-size:14.5px;
+    padding:13px 24px;
+    border-radius:3px;
+    text-decoration:none;
+    border:1px solid var(--line);
+    transition:border-color .15s, background .15s, transform .15s;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .btn-ghost:hover{border-color:var(--accent);background:rgba(227,166,79,0.04);transform:translateY(-2px);}
+
+  .hero-photo{
+    position:relative;
+    justify-self:end;
+    width:100%;
+    max-width:340px;
+  }
+  .hero-photo-frame{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:10px;
+    background:var(--bg-raised);
+    transition:border-color .3s;
+  }
+  .hero-photo-frame:hover{border-color:var(--accent-dim);}
+  .hero-photo-frame img{
+    width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    border-radius:2px;
+    filter:grayscale(15%) contrast(1.03);
+    background:linear-gradient(135deg,#1A202B,#111621);
+  }
+  .corner{
+    position:absolute;
+    width:14px;height:14px;
+    border:2px solid var(--accent);
+  }
+  .corner.tl{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+  .corner.br{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+  .photo-tag{
+    position:absolute;
+    bottom:-14px;
+    left:16px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    padding:5px 10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--text-dim);
+    border-radius:2px;
+  }
+
+  @media (max-width:820px){
+    .hero{padding:72px 0 32px;}
+    .hero-grid{grid-template-columns:1fr;gap:48px;}
+    .hero-photo{justify-self:start;max-width:280px;}
+  }
+
+  /* ---------- PIPELINE STRIP ---------- */
+  .pipeline{
+    padding:64px 0 24px;
+    position:relative;
+  }
+  .pipeline-track{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 4px;
+  }
+  .pipeline-track::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;right:0;
+    height:1px;
+    background:var(--line);
+    transform:translateY(-50%);
+    z-index:0;
+  }
+  .pipeline-line-fill{
+    position:absolute;
+    top:50%;
+    left:0;
+    height:1px;
+    background:linear-gradient(90deg, var(--accent-dim), var(--accent));
+    transform:translateY(-50%);
+    width:0%;
+    z-index:1;
+    transition:width 1.8s var(--ease);
+  }
+  .pipeline.in-view .pipeline-line-fill{width:100%;}
+
+  .pipeline-pulse{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--accent-bright);
+    box-shadow:0 0 14px 4px var(--accent-glow);
+    transform:translate(-50%,-50%);
+    z-index:3;
+    opacity:0;
+  }
+  .pipeline.in-view .pipeline-pulse{
+    animation:pulseTravel 3.4s var(--ease) infinite;
+  }
+  @keyframes pulseTravel{
+    0%{left:0;opacity:0;}
+    8%{opacity:1;}
+    92%{opacity:1;}
+    100%{left:100%;opacity:0;}
+  }
+
+  .p-node{
+    position:relative;
+    z-index:2;
+    background:var(--bg);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:0 10px;
+  }
+  .p-node .ring{
+    width:11px;height:11px;
+    border-radius:50%;
+    border:2px solid var(--line);
+    background:var(--bg);
+    transition:border-color .4s, background .4s, box-shadow .4s;
+  }
+  .pipeline.in-view .p-node .ring{
+    border-color:var(--accent);
+    background:var(--accent);
+    box-shadow:0 0 0 5px var(--accent-glow);
+  }
+  .p-node .p-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.03em;
+    color:var(--text-dim);
+    text-align:center;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  @media (max-width:640px){
+    .p-node{padding:0 4px;}
+    .p-node .p-label{font-size:9.5px;letter-spacing:0;}
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{
+    border-top:1px solid var(--line-soft);
+    border-bottom:1px solid var(--line-soft);
+    overflow:hidden;
+    padding:18px 0;
+    position:relative;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .marquee-track{
+    display:flex;
+    gap:44px;
+    width:max-content;
+    animation:marquee 38s linear infinite;
+  }
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  .marquee-track span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    white-space:nowrap;
+  }
+  .marquee-track span.sep{color:var(--accent-dim);}
+  @keyframes marquee{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{
+    padding:88px 0;
+    border-top:1px solid var(--line-soft);
+    scroll-margin-top:80px;
+  }
+  .sec-head{
+    margin-bottom:44px;
+  }
+  .sec-head h2{
+    font-size:clamp(26px,3vw,34px);
+    text-transform:uppercase;
+    line-height:1.08;
+  }
+  @media (max-width:700px){
+    section{padding:64px 0;}
+    .sec-head{margin-bottom:32px;}
+  }
+
+  /* About */
+  .about-text{
+    font-size:17px;
+    color:var(--text-mid);
+    max-width:66ch;
+  }
+  .about-text strong{color:var(--text);}
+  .about-text em{font-style:normal;color:var(--accent);}
+  .about-stats{
+    display:flex;
+    gap:36px;
+    margin-top:36px;
+    flex-wrap:wrap;
+    padding-top:28px;
+    border-top:1px solid var(--line-soft);
+  }
+  .stat b{
+    display:block;
+    font-family:'Archivo', sans-serif;
+    font-weight:900;
+    font-size:22px;
+    color:var(--accent);
+    line-height:1.2;
+  }
+  .stat span{
+    font-size:13px;
+    color:var(--text-dim);
+    display:block;
+    margin-top:4px;
+  }
+
+  /* Skills */
+  .skill-groups{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border:1px solid var(--line-soft);
+    border-radius:4px;
+    overflow:hidden;
+    background:var(--bg-raised);
+  }
+  .skill-col{
+    padding:26px 24px;
+    border-left:1px solid var(--line-soft);
+    transition:background .25s var(--ease), transform .3s var(--ease);
+  }
+  .skill-col:first-child{border-left:none;}
+  .skill-col:hover{background:var(--bg-elevated); transform: translateY(-4px);}
+  .skill-col h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:12.5px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    margin-bottom:16px;
+  }
+  .skill-col ul{
+    list-style:none;
+    margin:0;padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .skill-col li{
+    font-size:14.5px;
+    color:var(--text-mid);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8px;
+  }
+  .skill-col li em{
+    font-style:normal;
+    color:var(--text-dim);
+    font-size:12px;
+    font-family:'IBM Plex Mono', monospace;
+    white-space:nowrap;
+  }
+  @media (max-width:700px){
+    .skill-groups{grid-template-columns:1fr;}
+    .skill-col{border-left:none;border-top:1px solid var(--line-soft);}
+    .skill-col:first-child{border-top:none;}
+    .skill-col:hover{transform: translateX(4px) translateY(0);}
+  }
+
+  /* Experience */
+  .timeline{
+    position:relative;
+    padding-left:28px;
+    border-left:1px solid var(--line);
+  }
+  .t-item{
+    position:relative;
+    padding-bottom:40px;
+  }
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:-33px;
+    top:6px;
+    width:9px;height:9px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 4px var(--bg), 0 0 0 5px var(--line);
+    transition:box-shadow .3s;
+  }
+  .t-item:hover::before{
+    box-shadow:0 0 0 4px var(--bg), 0 0 0 5px var(--accent), 0 0 12px 2px var(--accent-glow);
+  }
+  .t-when{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .t-item h3{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    margin-top:6px;
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .t-org{
+    color:var(--text-dim);
+    font-size:14px;
+    margin-top:2px;
+  }
+  .t-item ul{
+    margin:14px 0 0;
+    padding-left:18px;
+    color:var(--text-mid);
+    font-size:14.5px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .t-item ul li::marker{color:var(--accent-dim);}
+
+  /* Services */
+  .services-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .svc{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:20px;
+    padding:26px 20px 26px 0;
+    border-top:1px solid var(--line-soft);
+    position:relative;
+    transition:padding-left .3s var(--ease), background .3s;
+  }
+  .svc::before{
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:2px;
+    background:var(--accent);
+    transform:scaleY(0);
+    transform-origin:top;
+    transition:transform .35s var(--ease);
+  }
+  .svc:first-child{border-top:none;padding-top:0;}
+  .svc:hover{padding-left:20px;background:rgba(227,166,79,0.04);}
+  .svc:hover::before{transform:scaleY(1);}
+  .svc-code{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--accent-dim);
+    font-size:13px;
+    padding-top:3px;
+    transition:color .25s;
+  }
+  .svc:hover .svc-code{color:var(--accent);}
+  .svc h3{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:19px;
+    text-transform:none;
+    letter-spacing:0;
+    margin-bottom:8px;
+  }
+  .svc p{
+    margin:0;
+    color:var(--text-dim);
+    font-size:14.5px;
+    max-width:58ch;
+  }
+  @media (max-width:520px){
+    .svc{grid-template-columns:1fr;gap:6px;padding-right:0;}
+  }
+
+  /* Contact */
+  .contact-body{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  @media (max-width:700px){ .contact-body{grid-template-columns:1fr;} }
+  .contact-card{
+    border:1px solid var(--line-soft);
+    border-radius:4px;
+    padding:26px;
+    text-decoration:none;
+    display:block;
+    transition:border-color .2s, transform .2s var(--ease), background .2s;
+    background:var(--bg-raised);
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-card::after{
+    content:"→";
+    position:absolute;
+    right:22px;
+    bottom:22px;
+    font-size:16px;
+    color:var(--accent);
+    opacity:0;
+    transform:translateX(-6px);
+    transition:opacity .25s, transform .25s var(--ease);
+  }
+  .contact-card:hover{
+    border-color:var(--accent);
+    transform:translateY(-3px);
+    background:var(--bg-elevated);
+  }
+  .contact-card:hover::after{opacity:1;transform:translateX(0);}
+  .contact-card .clabel{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-dim);
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:10px;
+    letter-spacing:0.04em;
+  }
+  .contact-card .cval{
+    font-family:'Archivo', sans-serif;
+    font-weight:700;
+    font-size:17px;
+    color:var(--text);
+    word-break:break-word;
+  }
+
+  /* hyperlink-styled value */
+  .cval-link{
+    color:var(--accent);
+    display:inline-block;
+    border-bottom:1px solid transparent;
+    transition:color .2s, border-color .2s;
+  }
+  .contact-card:hover .cval-link{
+    color:var(--accent-bright);
+    border-bottom-color:var(--accent-bright);
+  }
+
+  .contact-note{
+    margin-top:28px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--text-dim);
+  }
+  .contact-note .dot-live{width:6px;height:6px;}
+
+  /* Footer */
+  footer{
+    border-top:1px solid var(--line-soft);
+    padding:32px 0 40px;
+    font-size:13px;
+    color:var(--text-dim);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  footer a{text-decoration:none;transition:color .15s;}
+  footer a:hover{color:var(--accent);}
+  .footer-right{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .to-top{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.03em;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .to-top svg{transition:transform .25s var(--ease);}
+  .to-top:hover svg{transform:translateY(-3px);}
+
+  /* ---------- REVEAL ---------- */
+  html.js .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .75s var(--ease), transform .75s var(--ease);
+    will-change:opacity, transform;
+  }
+  html.js .reveal.in{
+    opacity:1;
+    transform:none;
+  }
+  html.js .reveal[data-delay="1"]{transition-delay:.08s;}
+  html.js .reveal[data-delay="2"]{transition-delay:.16s;}
+  html.js .reveal[data-delay="3"]{transition-delay:.24s;}
+  html.js .reveal[data-delay="4"]{transition-delay:.32s;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .pipeline-line-fill{transition:none;}
+    .p-node .ring{transition:none;}
+    .pipeline.in-view .pipeline-pulse{animation:none;opacity:0;}
+    .marquee-track{animation:none;}
+    .dot-live{animation:none;}
+    html.js .reveal{opacity:1;transform:none;transition:none;}
+    *{scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#services">Services</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="nav-social" style="display:flex;gap:10px;">
+        <a class="icon-link" href="https://github.com/faressallem8" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/fares-ahmed-72466532a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05a3.75 3.75 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a>
+      </div>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-social">
+      <a class="icon-link" href="https://github.com/faressallem8" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+      </a>
+      <a class="icon-link" href="https://www.linkedin.com/in/fares-ahmed-72466532a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05a3.75 3.75 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <section class="hero" style="border-top:none;">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="hero-eyebrow">
+          <span class="dot-live"></span>
+          <span class="label">Open for new engagements</span>
+        </div>
+        <h1>Fares Ahmed<br>Loutfy</h1>
+        <div class="role">Data Engineer</div>
+        <p class="tagline">I turn messy, unstructured data into a high-growth startup's fastest-growing revenue asset — lightweight Python pipelines that grow with you, not against you.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#contact">
+            Start a project
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9M8.5 3.5L13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn-ghost" href="#experience">See my background</a>
+        </div>
+        <div class="hero-social">
+          <span class="hs-label">Find me on</span>
+          <a class="icon-link" href="https://github.com/faressallem8" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/fares-ahmed-72466532a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05a3.75 3.75 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo reveal" data-delay="2">
+        <div class="hero-photo-frame">
+          <span class="corner tl"></span>
+          <span class="corner br"></span>
+          <img src="assets/photo.jpg" alt="Portrait of Fares Ahmed Loutfy" width="340" height="453" loading="eager">
+        </div>
+        <div class="photo-tag">Alexandria, Egypt</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pipeline" style="border-top:none;" id="pipeline-strip" aria-label="Data pipeline stages">
+    <div class="wrap">
+      <div class="pipeline-track">
+        <div class="pipeline-line-fill"></div>
+        <div class="pipeline-pulse" aria-hidden="true"></div>
+        <div class="p-node"><span class="ring"></span><span class="p-label">Ingest</span></div>
+        <div class="p-node"><span class="ring"></span><span class="p-label">Transform</span></div>
+        <div class="p-node"><span class="ring"></span><span class="p-label">Warehouse</span></div>
+        <div class="p-node"><span class="ring"></span><span class="p-label">Serve</span></div>
+        <div class="p-node"><span class="ring"></span><span class="p-label">Insight</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Python</span><span class="sep">/</span>
+      <span>SQL</span><span class="sep">/</span>
+      <span>Snowflake</span><span class="sep">/</span>
+      <span>AWS S3</span><span class="sep">/</span>
+      <span>Redshift</span><span class="sep">/</span>
+      <span>Pandas</span><span class="sep">/</span>
+      <span>NumPy</span><span class="sep">/</span>
+      <span>Scikit-learn</span><span class="sep">/</span>
+      <span>MySQL</span><span class="sep">/</span>
+      <span>Kafka</span><span class="sep">/</span>
+      <span>CI/CD</span><span class="sep">/</span>
+      <span>Java</span><span class="sep">/</span>
+      <span>Python</span><span class="sep">/</span>
+      <span>SQL</span><span class="sep">/</span>
+      <span>Snowflake</span><span class="sep">/</span>
+      <span>AWS S3</span><span class="sep">/</span>
+      <span>Redshift</span><span class="sep">/</span>
+      <span>Pandas</span><span class="sep">/</span>
+      <span>NumPy</span><span class="sep">/</span>
+      <span>Scikit-learn</span><span class="sep">/</span>
+      <span>MySQL</span><span class="sep">/</span>
+      <span>Kafka</span><span class="sep">/</span>
+      <span>CI/CD</span><span class="sep">/</span>
+      <span>Java</span><span class="sep">/</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Built for pipelines<br>that outlive the founder who built them</h2>
+      </div>
+      <div class="reveal" data-delay="1">
+        <p class="about-text">
+          My name is <strong>Fares Ahmed</strong>, and I'm a data engineer. I specialize in architecting lightweight, Python-driven ETLs that scale with a company instead of becoming its next bottleneck. Working from a foundation in OOP, SQL, and Java, I build systems that are functional <em>and</em> maintainable — because I know a team will eventually take them over.
+        </p>
+        <p class="about-text" style="margin-top:16px;">
+          I don't just deliver data. I deliver the insight that helps a team close a funding round, retain users, and sharpen product-market fit. My work is meant to be one less thing on your mind.
+        </p>
+        <div class="about-stats">
+          <div class="stat"><b>Python · SQL</b><span>Core languages, expert level</span></div>
+          <div class="stat"><b>AWS</b><span>S3, EC2, RDS</span></div>
+          <div class="stat"><b>Snowflake</b><span>Cloud warehousing</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>The stack behind the pipeline</h2>
+      </div>
+      <div class="skill-groups reveal" data-delay="1">
+        <div class="skill-col">
+          <h3>Languages</h3>
+          <ul>
+            <li>Python <em>Expert</em></li>
+            <li>SQL <em>Expert</em></li>
+            <li>Java <em>Proficient</em></li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Data &amp; Cloud</h3>
+          <ul>
+            <li>MySQL <em>Database</em></li>
+            <li>Snowflake <em>Warehouse</em></li>
+            <li>AWS S3 / EC2 / RDS <em>Cloud</em></li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>ML &amp; Practices</h3>
+          <ul>
+            <li>Scikit-learn <em>ML</em></li>
+            <li>Pandas / NumPy <em>Features</em></li>
+            <li>OOP · SOLID · CI/CD <em>Engineering</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Education &amp; training</h2>
+      </div>
+      <div class="timeline reveal" data-delay="1">
+        <div class="t-item">
+          <div class="t-when">Jul 2026 – Present</div>
+          <h3>Microsoft Data Engineer Track</h3>
+          <div class="t-org">DEPI — Digital Egypt Pioneers Initiative</div>
+          <ul>
+            <li>Ongoing track covering Python and SQL for production data engineering.</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <div class="t-when">Jul 2026 – Aug 2026</div>
+          <h3>Autonomous Agents Summer Training</h3>
+          <div class="t-org">Faculty of Computing and Data Science</div>
+          <ul>
+            <li>MCP servers</li>
+            <li>RAG systems and task decomposition</li>
+          </ul>
+        </div>
+        <div class="t-item">
+          <div class="t-when">Education</div>
+          <h3>Faculty of Computing and Data Science</h3>
+          <div class="t-org">Alexandria University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>What I can build for you</h2>
+      </div>
+      <div class="services-list reveal" data-delay="1">
+        <div class="svc">
+          <div class="svc-code">01</div>
+          <div>
+            <h3>Custom data pipeline architecture</h3>
+            <p>End-to-end design from API ingestion through to cloud warehousing on Snowflake or BigQuery.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <div class="svc-code">02</div>
+          <div>
+            <h3>Real-time analytics setup</h3>
+            <p>Kafka and Python streaming pipelines that power live user-behavior dashboards.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <div class="svc-code">03</div>
+          <div>
+            <h3>Legacy data rescue</h3>
+            <p>Migrating messy CSVs, spreadsheets, and legacy SQL dumps into structured, queryable data lakes.</p>
+          </div>
+        </div>
+        <div class="svc">
+          <div class="svc-code">04</div>
+          <div>
+            <h3>ML feature engineering</h3>
+            <p>Packaging raw logs into ready-to-use features for your in-house data science team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Ready to stop firefighting your data<br>and start scaling?</h2>
+      </div>
+      <div class="reveal" data-delay="1">
+        <div class="contact-body">
+          <a class="contact-card" href="mailto:faressallem8@gmail.com">
+            <span class="clabel">Email</span>
+            <span class="cval">faressallem8@gmail.com</span>
+          </a>
+          <a class="contact-card" href="tel:+201550272915">
+            <span class="clabel">Phone</span>
+            <span class="cval">01550272915</span>
+          </a>
+          <a class="contact-card" href="https://github.com/faressallem8" target="_blank" rel="noopener noreferrer">
+            <span class="clabel">GitHub</span>
+            <span class="cval cval-link">View my repositories</span>
+          </a>
+          <a class="contact-card" href="https://www.linkedin.com/in/fares-ahmed-72466532a/" target="_blank" rel="noopener noreferrer">
+            <span class="clabel">LinkedIn</span>
+            <span class="cval cval-link">Connect with me</span>
+          </a>
+        </div>
+        <div class="contact-note">
+          <span class="dot-live"></span>
+          <span>Typically replies within 24 hours · Alexandria, Egypt (GMT+2)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Fares Ahmed Loutfy · Alexandria, Egypt</span>
+  <div class="footer-right">
+    <a href="https://github.com/faressallem8" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/fares-ahmed-72466532a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a class="to-top" href="#top">
+      Back to top
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+
+  /* ---------- Scroll progress ---------- */
+  (function(){
+    var bar = document.getElementById('scrollProgress');
+    var ticking = false;
+    function update(){
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? (window.scrollY / h) : 0;
+      bar.style.width = Math.min(100, Math.max(0, p * 100)) + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){ requestAnimationFrame(update); ticking = true; }
+    }, {passive:true});
+    window.addEventListener('resize', update, {passive:true});
+    update();
+  })();
+
+  /* ---------- Mobile nav ---------- */
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if(!toggle || !menu) return;
+
+    function close(){
+      toggle.setAttribute('aria-expanded','false');
+      menu.classList.remove('open');
+    }
+
+    toggle.addEventListener('click', function(){
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('open', !open);
+    });
+
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', close);
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') close();
+    });
+
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 820) close();
+    });
+  })();
+
+  /* ---------- Pipeline strip ---------- */
+  (function(){
+    var strip = document.getElementById('pipeline-strip');
+    if(!strip || !('IntersectionObserver' in window)) {
+      if(strip) strip.classList.add('in-view');
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          strip.classList.add('in-view');
+          obs.disconnect();
+        }
+      });
+    }, {threshold:0.35});
+    obs.observe(strip);
+  })();
+
+  /* ---------- Reveal on scroll ---------- */
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ obs.observe(el); });
+  })();
+
+  /* ---------- Active nav link ---------- */
+  (function(){
+    if(!('IntersectionObserver' in window)) return;
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+    var sections = links
+      .map(function(l){ return document.querySelector(l.getAttribute('href')); })
+      .filter(Boolean);
+    if(!sections.length) return;
+
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+          });
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+
+    sections.forEach(function(s){ obs.observe(s); });
+  })();
+</script>
+
+</body>
+</html>
